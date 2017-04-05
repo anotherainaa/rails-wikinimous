@@ -9,7 +9,7 @@
 10.times do
   article = Article.new(
     title:    Faker::Name.title,
-    content: Faker::Lorem.paragraphs(3),
+    content: Faker::Lorem.paragraph(50),
   )
   article.save!
 end

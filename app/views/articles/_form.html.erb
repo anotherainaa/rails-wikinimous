@@ -1,8 +1,9 @@
 <%= form_for(@article) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <h3><%= f.label :title %></h3>
+  <p><%= f.text_field :title , :size =>100%></p>
+
+  <h3><%= f.label :content %></h3>
+  <%= f.text_area :content, :cols => "100", :rows => "20" %>
   <%= f.submit %>
 <% end %>
 

@@ -1,12 +1,16 @@
-<h1>Articles#index</h1>
 
-<p><%= link_to "Create a article", new_article_path %></p>
+<h1>Wikinimous</h1>
+<%= link_to "Create a article", new_article_path %>
 
+<div class="container">
+  <ul class="list-unstyled"><% @articles.each do |article| %>
+      <div class="card text-center">
+       <li>
+        <h2><%= link_to article.title, article_path(article)%></h2>
+        <p><%= article.content[0..200]  %></p>
+        </li>
+      <% end %>
+      </div>
+  </ul>
+</div>
 
-<ul><% @articles.each do |article| %>
-  <li><%= link_to article.title, article_path(article)%>
-  <%= link_to "Edit", edit_article_path(article) %>
-  <%= link_to "Delete", article_path(article),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %></li>
-<% end %></ul>
